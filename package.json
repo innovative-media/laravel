@@ -1,0 +1,21 @@
+{
+  "name": "imd-boilerplate",
+  "version": "0.0.0",
+  "description": "IMD Boilerplate",
+  "scripts": {
+    "test": "echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1"
+  },
+  "keywords": ["Gulp", "Boilerplate"],
+  "author": "Dustin Autery",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "~3.8.8",
+    "Serum": "git+ssh://git@github.com:innovative-media/serum",
+    "run-sequence": "~1.0.1",
+    "gulp-load-plugins": "~0.7.1",
+    "gulp-shell": "~0.2.10",
+    "gulp-prompt": "~0.1.1",
+    "gulp-json-editor": "~2.1.1",
+    "gulp-if": "~1.2.5"
+  }
+}
