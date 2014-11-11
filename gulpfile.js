@@ -1,10 +1,9 @@
 var gulp 		= require('gulp'),
-	p 			= require('./package.json'),
 	config 		= require('./serum'),
 	serum 		= require('Serum'),
-	jeditor 	= require('gulp-json-editor'),
-	runSequence = require('run-sequence').use(gulp);
-var plugins 	= require('gulp-load-plugins')();
+	runSequence = require('run-sequence'),
+	p 			= require('./package.json'),
+	plugins 	= require('gulp-load-plugins')({ camelize: true });
 
 gulp.task('scss', function(){
 	serum.doScss(config.www.scss.app.src, config.www.scss.app.paths, config.www.scss.app.dest)
@@ -39,27 +38,32 @@ gulp.task('watch', function(){
 });
 
 gulp.task('update-foundation', function(){
-	gulp.src('bower_components/foundation/scss/foundation/_settings.scss')
+	return gulp.src('bower_components/foundation/scss/foundation/_settings.scss')
 		.pipe(gulp.dest('pre/scss'));
 });
 
-gulp.task('core.install', ['core-install'], function(){
+gulp.task('static.install', ['update-foundation'], function(){
 	runSequence('update-foundation','run');
-});
 
-gulp.task('static.install', function(cb){
-	gulp.src('', {read: false})
+	return gulp.src('', {read: false})
 		.pipe(plugins.shell([
 			'mv pre/.htaccess ./.htaccess',
 			'mv pre/index.html.template ./index.html',
 			'rm pre/*.php'
-		]))
+		]));
+});
 
-	runSequence('update-foundation','run');
-	cb();
-})
+gulp.task('move', function(){
+	return gulp.src('', {read: false})
+		.pipe(plugins.shell([
+			'rm -Rf .git .gitignore README.md index.html.template public/favicon.ico',
+			'mv pre/.htaccess public/.htaccess',
+			'mkdir -p app/views/www; mv pre/*.blade.php app/views/www/.',
+			'mv pre/routes.php app/routes.php'
+		]));
+});
 
-gulp.task('install', function(){
+gulp.task('install', ['update-foundation'], function(){
 	return gulp.src('')
 		.pipe(plugins.prompt.prompt({
 			type: 'list',
@@ -67,21 +71,39 @@ gulp.task('install', function(){
 			name: 'project_type',
 			choices: ['Innovative Core','Static HTML']
 		}, function(res){
-			if (res.project_type === 'Innovative Core') {
-				gulp.start(core.install)
-			} else {
-				gulp.start(static.install)
+			var publicPath;
+
+			switch(res.project_type) {
+				case 'Innovative Core':
+					publicPath = 'public/';
+					break;
+
+				default:
+					publicPath = '/';
+					break;
 			}
-		}))
+
+			gulp.src('./package.json')
+				.pipe(plugins.jsonEditor({
+					"publicPath": publicPath
+				}))
+				.pipe(gulp.dest('./'))
+
+			if (res.project_type === 'Innovative Core') {
+				return gulp.src('', {read: false})
+					.pipe(plugins.shell([
+						'gulp core-install',
+						'gulp move',
+						'gulp run'
+					]))
+			} else {
+				return gulp.src('', {read: false})
+					.pipe(plugins.shell([
+						'gulp static.install'
+					]))
+			}
+		}));
 })
 
-gulp.task('run', ['scss', 'js', 'images']);
+gulp.task('run', ['scss','js','images']);
 gulp.task('default', ['watch', 'run']);
-
-// Clean install
-gulp.task('revert', function(){
-	return gulp.src('')
-		.pipe(plugins.shell([
-			'rm -Rf tmp app bootstrap public uploads vendor .gitattributes .gitignore artisan composer.lock composer.json phpunit.xml readme.md server.php'
-		]));
-});

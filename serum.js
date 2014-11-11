@@ -1,9 +1,10 @@
+var	p = require('./package.json'),
+	publicPath = p.publicPath;
+
 module.exports = {
 	www: {},
 	libraries: {}
 };
-
-var publicPath = 'public/';
 
 module.exports.www.scss = {
 	app: {
