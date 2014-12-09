@@ -19,7 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-legacy": "zurb/bower-foundation",
+    "jquery-legacy": "jquery#1.11.0",
     "jquery-easing-original": "~1.3.1",
     "respond": "~1.4.2",
     "rem-unit-polyfill": "~1.3.2",
