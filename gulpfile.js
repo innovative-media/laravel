@@ -58,8 +58,7 @@ gulp.task('move', function(){
 		.pipe(plugins.shell([
 			'rm -Rf .git .gitignore README.md index.html.template public/favicon.ico',
 			'mv pre/.htaccess public/.htaccess',
-			'mkdir -p app/views/www; mv pre/*.blade.php app/views/www/.',
-			'mv pre/routes.php app/routes.php'
+			'mkdir -p app/views/www'
 		]));
 });
 
