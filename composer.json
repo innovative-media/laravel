@@ -57,7 +57,7 @@
 			"git init",
 			"pre-commit install",
 			"php artisan key:generate",
-			"php artisan setup",
+			"App\\Console\\Commands\\Setup::postCreateProject",
 			"npm install",
 			"bower install",
 			"php artisan migrate --package=innovative/core",
