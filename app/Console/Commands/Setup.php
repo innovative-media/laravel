@@ -27,8 +27,8 @@ class Setup {
 
 		$projectName   = $io->ask('Project name:');
 		$projectDomain = $io->ask('Live domain name:');
-		$databaseName  = $io->ask('Database Name:');
-		$databaseUser  = $io->ask('Database User:');
+		$databaseName  = $io->ask('Database Name (must exist):');
+		$databaseUser  = $io->ask('Database User (must exist):');
 		$databasePass  = $io->ask('Database Password:');
 
 		$this->projectName($projectName);
