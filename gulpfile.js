@@ -45,7 +45,7 @@ gulp.task('update-foundation', function(){
 gulp.task('move', function(){
 	return gulp.src('', {read: false})
 		.pipe(plugins.shell([
-			// 'rm -Rf .git',
+			'rm -Rf .git',
 			'mkdir -p app/views/www'
 		]));
 });
