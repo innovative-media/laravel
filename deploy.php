@@ -1,5 +1,20 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Application deployment scripting
+|--------------------------------------------------------------------------
+|
+| You may configure automated deployment to stages with the scripting below
+| The defaults required to deploy a standard laravel project to a prepared
+| stage are provided.  Make sure to replace SEVER_NAME, SEVER_NAME, USER,
+| and REPO_PATH before getting started.
+|
+| Note that your deployment stage will require certain dependencies and
+| permissions in order to operate.
+|
+*/
+
 require 'recipe/common.php';
 
 server('SEVER_NAME', 'IP_ADDRESS')

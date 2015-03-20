@@ -5,6 +5,9 @@
 | Application & Route Filters
 |--------------------------------------------------------------------------
 |
+| Before adding filters directly to this file, consider using a class-based
+| approach and storing your filter classes in the app/Http/Filters folder.
+|
 | Below you will find the "before" and "after" events for the application
 | which may be used to do any work before or after a request into your
 | application. Here you may also register your custom route filters.
@@ -67,7 +70,10 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if ( Auth::check() )
+	{
+		return Redirect::to('/');
+	}
 });
 
 /*
