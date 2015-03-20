@@ -3,5 +3,5 @@
   hooks:
   - id: php-lint
   - id: php-cs
-    files: ^src\/(?:.*)\.(php)$
+    files: ^app\/(?:.*)\.(php)$
     args: [--standard=ruleset.xml -n -p]
