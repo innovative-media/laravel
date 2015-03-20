@@ -1,6 +1,6 @@
-## Innovative's Core version of the Laravel PHP Framework
+## Innovative's Core version of Laravel
 
-## Recommended Install
+### Recommended Install
 
 ~~~
 
@@ -8,7 +8,7 @@ composer create-project innovative/laravel directory_name ~4.2
 
 ~~~
 
-In orer to use this method, you must first make sure your global composer config includes the following:
+In order to use this method, you must first make sure your global composer config includes the following:
 
 ~~~
     ...
