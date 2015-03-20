@@ -7,12 +7,15 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false"
+         stopOnFailure="true"
          syntaxCheck="false"
 >
     <testsuites>
-        <testsuite name="Application Test Suite">
-            <directory>./app/tests/</directory>
+        <testsuite name="Integration Test Suite">
+            <directory>./tests/Integration/</directory>
+        </testsuite>
+        <testsuite name="Unit Test Suite">
+            <directory>./tests/Unit/</directory>
         </testsuite>
     </testsuites>
 </phpunit>
