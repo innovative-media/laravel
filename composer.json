@@ -62,8 +62,8 @@
 			"bower install",
 			"php artisan migrate --package=innovative/core",
 			"php artisan db:seed --class=InnovativeCoreSeeder",
-			"php artisan asset:publish --path=vendor/innovative/core/public innovative/core",
-			"php artisan config:publish innovative/core",
+			"php artisan asset:publish innovative/core",
+			"php artisan config:publish --path=vendor/innovative/core/config innovative/core",
 			"php artisan clear-compiled",
 			"php artisan optimize"
 		]
