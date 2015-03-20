@@ -42,66 +42,21 @@ gulp.task('update-foundation', function(){
 		.pipe(gulp.dest('pre/scss'));
 });
 
-gulp.task('static.install', ['update-foundation'], function(){
-	runSequence('update-foundation','run');
-
-	return gulp.src('', {read: false})
-		.pipe(plugins.shell([
-			'mv pre/.htaccess ./.htaccess',
-			'mv pre/index.html.template ./index.html',
-			'rm pre/*.php'
-		]));
-});
-
 gulp.task('move', function(){
 	return gulp.src('', {read: false})
 		.pipe(plugins.shell([
-			'rm -Rf .git .gitignore README.md index.html.template public/favicon.ico',
-			'mv pre/.htaccess public/.htaccess',
+			// 'rm -Rf .git',
 			'mkdir -p app/views/www'
 		]));
 });
 
 gulp.task('install', ['update-foundation'], function(){
-	return gulp.src('')
-		.pipe(plugins.prompt.prompt({
-			type: 'list',
-			message: 'What type of project are you installing?',
-			name: 'project_type',
-			choices: ['Innovative Core','Static HTML']
-		}, function(res){
-			var publicPath;
-
-			switch(res.project_type) {
-				case 'Innovative Core':
-					publicPath = 'public/';
-					break;
-
-				default:
-					publicPath = '/';
-					break;
-			}
-
-			gulp.src('./package.json')
-				.pipe(plugins.jsonEditor({
-					"publicPath": publicPath
-				}))
-				.pipe(gulp.dest('./'))
-
-			if (res.project_type === 'Innovative Core') {
-				return gulp.src('', {read: false})
-					.pipe(plugins.shell([
-						'gulp core-install',
-						'gulp move',
-						'gulp run'
-					]))
-			} else {
-				return gulp.src('', {read: false})
-					.pipe(plugins.shell([
-						'gulp static.install'
-					]))
-			}
-		}));
+	return gulp.src('', {read: false})
+		.pipe(plugins.shell([
+			'gulp core-install',
+			'gulp move',
+			'gulp run'
+		]));
 })
 
 gulp.task('run', ['scss','js','images']);
