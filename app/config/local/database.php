@@ -23,8 +23,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'new_project',
-			'username'  => 'cmuser',
+			'database'  => 'DATABASE_NAME',
+			'username'  => 'DATABASE_USER',
 			'password'  => getenv('DB_PASSWORD'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
