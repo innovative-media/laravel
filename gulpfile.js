@@ -31,33 +31,11 @@ gulp.task('watch', function(){
 
 	gulp.watch(config.www.images.app.src, ['images']);
 
-	var wwwPixrem = gulp.watch(config.www.scss.app.dest + '**/*.css');
+	var wwwPixrem = gulp.watch(config.www.scss.app.dest + '**/*[^-ie8].css');
 		wwwPixrem.on('change', function(){
-			serum.doPixrem(config.www.scss.app.dest + '**/*.css', config.www.scss.app.dest)
+			serum.doPixrem(config.www.scss.app.dest + '**/*[^-ie8].css', config.www.scss.app.dest)
 		});
 });
-
-gulp.task('update-foundation', function(){
-	return gulp.src('bower_components/foundation/scss/foundation/_settings.scss')
-		.pipe(gulp.dest('pre/scss'));
-});
-
-gulp.task('move', function(){
-	return gulp.src('', {read: false})
-		.pipe(plugins.shell([
-			'rm -Rf .git',
-			'mkdir -p app/views/www'
-		]));
-});
-
-gulp.task('install', ['update-foundation'], function(){
-	return gulp.src('', {read: false})
-		.pipe(plugins.shell([
-			'gulp core-install',
-			'gulp move',
-			'gulp run'
-		]));
-})
 
 gulp.task('run', ['scss','js','images']);
 gulp.task('default', ['watch', 'run']);
