@@ -9,7 +9,19 @@ module.exports = {
 module.exports.www.scss = {
 	app: {
 		src: ['pre/scss/**/*.scss'],
-		paths: ['pre/scss', 'bower_components/foundation/scss', 'bower_components/compass-mixins/lib'],
+		paths: [
+			'pre/scss'
+			, 'bower_components/foundation/scss'
+			, 'bower_components/compass-mixins/lib'
+			, 'bower_components/slick.js/slick'
+			, 'bower_components/sweetalert/lib'
+			, 'vendor/innovative/core/pre/scss/libraries/chosen'
+			, 'vendor/innovative/core/pre/scss/libraries/jquery.tagsinput'
+			, 'vendor/innovative/core/pre/scss/libraries/jqueryui-timepicker-addon'
+			, 'vendor/innovative/core/pre/scss/libraries/redactor'
+			, 'vendor/innovative/core/pre/scss/libraries/slick'
+			, 'vendor/innovative/core/pre/themes/flat/scss'
+		],
 		dest: publicPath + 'css/'
 	}
 }
@@ -52,11 +64,17 @@ module.exports.www.js = {
 	app: {
 		watchGlob: 'pre/js/**/*.js',
 		src: [
-			'bower_components/jquery-placeholder/jquery.placeholder.js'
+			'bower_components/modernizr/modernizr.js'
+			, 'bower_components/respimage/respimage.min.js'
+			, 'bower_components/jquery.lazyload/jquery.lazyload.js'
+			, 'bower_components/jquery-placeholder/jquery.placeholder.js'
 			, 'bower_components/fastclick/lib/fastclick.js'
 			, 'bower_components/jquery.cookie/jquery.cookie.js'
 			, 'bower_components/foundation/js/foundation.js'
 			, 'bower_components/jquery-easing-original/jquery.easing.1.3.js'
+			, 'bower_components/slick.js/slick/slick.min.js'
+			, 'bower_components/jquery-ui/jquery-ui.min.js'
+			, 'bower_components/jqueryui-timepicker-addon/src/jquery-ui-timepicker-addon.js'
 			, 'pre/js/app.js'
 		],
 		name: 'app',
