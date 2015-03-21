@@ -55,6 +55,7 @@
 		],
 		"post-create-project-cmd": [
 			"git init",
+			"git remote add Innovative/Laravel git@github.com:dustinatinnovative/laravel.git",
 			"chmod 777 app/storage/* -R",
 			"pre-commit install",
 			"php artisan key:generate",
