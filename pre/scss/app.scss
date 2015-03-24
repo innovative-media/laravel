@@ -11,12 +11,12 @@
 
 @import "alert_boxes";
 @import "redactor";
-@import "sweetalert";
+@import "sweet-alert";
 @import "chosen";
 @import "jquery.tagsinput";
 @import "slick";
 @import "slick-theme";
-@import "../../flat/scss/editor_bar";
+@import "vendor/innovative/core/pre/themes/flat/scss/editor_bar";
 
 // Uncomment if using off-canvas nav
 // body { position: static; }
