@@ -21,6 +21,10 @@ gulp.task('images', function(){
 	serum.doImages(config.www.images.app.src, config.www.images.app.dest, config.www.images.app.options);
 });
 
+gulp.task('penthouse', function(){
+	serum.doPenthouse(config.www.penthouse.url, config.www.penthouse.src, config.www.penthouse.dest);
+});
+
 gulp.task('watch', function(){
 	gulp.watch(config.www.scss.app.src, ['scss']);
 
