@@ -1,9 +1,17 @@
 var gulp 		= require('gulp'),
 	config 		= require('./serum'),
 	serum 		= require('Serum'),
-	runSequence = require('run-sequence'),
-	p 			= require('./package.json'),
 	plugins 	= require('gulp-load-plugins')({ camelize: true });
+
+try {
+	var v = require('./.vhost.json'),
+		vhost 	= v.vHost;
+}
+catch(e) {
+	console.log(e);
+	console.log('Did you create .vhost.json ?');
+	process.exit(1);
+}
 
 gulp.task('scss', function(){
 	serum.doScss(config.www.scss.app.src, config.www.scss.app.paths, config.www.scss.app.dest)
@@ -22,7 +30,7 @@ gulp.task('images', function(){
 });
 
 gulp.task('penthouse', function(){
-	serum.doPenthouse(config.www.penthouse.url, config.www.penthouse.src, config.www.penthouse.dest);
+	serum.doPenthouse(vhost+config.www.penthouse.home.slug, config.www.penthouse.home.src, config.www.penthouse.home.dest);
 });
 
 gulp.task('watch', function(){

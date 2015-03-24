@@ -16,3 +16,4 @@ bootstrap/compiled.php
 .env.*.php
 tests/*.sqlite
 tests/*.sqlite-journal
+.vhost.json
