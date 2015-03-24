@@ -47,6 +47,8 @@ gulp.task('watch', function(){
 		wwwPixrem.on('change', function(){
 			serum.doPixrem(config.www.scss.app.dest + '**/*[^-ie8].css', config.www.scss.app.dest)
 		});
+
+	gulp.watch(config.www.scss.app.dest + 'app.css', ['penthouse']);
 });
 
 gulp.task('run', ['scss','js','images']);

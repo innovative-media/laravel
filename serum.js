@@ -15,12 +15,13 @@ module.exports.www.scss = {
 			, 'bower_components/compass-mixins/lib'
 			, 'bower_components/slick.js/slick'
 			, 'bower_components/sweetalert/lib'
+			, 'vendor/innovative/core/pre/scss/core_mixins'
+			, 'vendor/innovative/core/pre/scss/shared_components'
 			, 'vendor/innovative/core/pre/scss/libraries/chosen'
 			, 'vendor/innovative/core/pre/scss/libraries/jquery.tagsinput'
 			, 'vendor/innovative/core/pre/scss/libraries/jqueryui-timepicker-addon'
 			, 'vendor/innovative/core/pre/scss/libraries/redactor'
 			, 'vendor/innovative/core/pre/scss/libraries/slick'
-			, 'vendor/innovative/core/pre/themes/flat/scss'
 		],
 		dest: publicPath + 'css/'
 	}
