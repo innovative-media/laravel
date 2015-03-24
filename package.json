@@ -10,7 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "~3.8.8",
-    "Serum": "git+ssh://git@github.com:innovative-media/serum#0.0.3",
+    "Serum": "git+ssh://git@github.com:innovative-media/serum#0.0.4",
     "gulp-load-plugins": "~0.7.1",
     "gulp-shell": "~0.2.10",
     "gulp-prompt": "~0.1.1",

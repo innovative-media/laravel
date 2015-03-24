@@ -26,6 +26,12 @@ module.exports.www.scss = {
 	}
 }
 
+module.exports.www.penthouse = {
+	url: [''],
+	src: publicPath + 'css/app.css',
+	dest: 'resources/views/www/_partials/critical.blade.php'
+}
+
 module.exports.libraries.js = {
 	legacy: {
 		src: [
