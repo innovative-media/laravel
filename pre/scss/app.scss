@@ -1,51 +1,22 @@
-@import "compass";
-// @import "settings"; // bower_components/foundation/scss/foundation/_settings.scss
+// Procedural
+@import "procedural";
+
+// Foundation
+@import "normalize";
 @import "foundation";
 
-// Or selectively include components ( from bower_components/foundation/scss/foundation.scss )
-// @import
-// @import "foundation/components/grid";
-// @import "foundation/components/accordion";
-// @import "foundation/components/alert-boxes";
-// @import "foundation/components/block-grid";
-// @import "foundation/components/breadcrumbs";
-// @import "foundation/components/button-groups";
-// @import "foundation/components/buttons";
-// @import "foundation/components/clearing";
-// @import "foundation/components/dropdown";
-// @import "foundation/components/dropdown-buttons";
-// @import "foundation/components/flex-video";
-// @import "foundation/components/forms";
-// @import "foundation/components/icon-bar";
-// @import "foundation/components/inline-lists";
-// @import "foundation/components/joyride";
-// @import "foundation/components/keystrokes";
-// @import "foundation/components/labels";
-// @import "foundation/components/magellan";
-// @import "foundation/components/orbit";
-// @import "foundation/components/pagination";
-// @import "foundation/components/panels";
-// @import "foundation/components/pricing-tables";
-// @import "foundation/components/progress-bars";
-// @import "foundation/components/range-slider";
-// @import "foundation/components/reveal";
-// @import "foundation/components/side-nav";
-// @import "foundation/components/split-buttons";
-// @import "foundation/components/sub-nav";
-// @import "foundation/components/switches";
-// @import "foundation/components/tables";
-// @import "foundation/components/tabs";
-// @import "foundation/components/thumbs";
-// @import "foundation/components/tooltips";
-// @import "foundation/components/top-bar";
-// @import "foundation/components/type";
-// @import "foundation/components/offcanvas";
-// @import "foundation/components/visibility";
+// Core Components
+@import "core_alerts";
+@import "password_checker";
 
-@import "slick";
-@import "slick-theme";
-@import "custom_jquery-ui_elements";
+@import "alert_boxes";
 @import "redactor";
-@import "sweet-alert";
+@import "sweetalert";
 @import "chosen";
 @import "jquery.tagsinput";
+@import "slick";
+@import "slick-theme";
+@import "../../flat/scss/editor_bar";
+
+// Uncomment if using off-canvas nav
+// body { position: static; }
