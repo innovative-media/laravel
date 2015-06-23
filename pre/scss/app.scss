@@ -1,0 +1,22 @@
+// Procedural
+@import "procedural";
+
+// Foundation
+@import "normalize";
+@import "foundation";
+
+// Core Components
+@import "core_alerts";
+@import "password_checker";
+
+@import "alert_boxes";
+@import "redactor";
+@import "sweet-alert";
+@import "chosen";
+@import "jquery.tagsinput";
+@import "slick";
+@import "slick-theme";
+@import "vendor/innovative/core/pre/themes/flat/scss/editor_bar";
+
+// Uncomment if using off-canvas nav
+// body { position: static; }

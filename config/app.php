@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://PROJECT_DOMAIN',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log' => 'single',
+    'log' => 'daily',
 
     /*
     |--------------------------------------------------------------------------
@@ -144,6 +144,30 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        Innovative\Core\Providers\CoreProvider::class,
+        Innovative\Core\Providers\AuditorProvider::class,
+        Innovative\Core\Providers\AnalyticsProvider::class,
+        Innovative\Core\Providers\BanProvider::class,
+        Innovative\Core\Providers\CmsProvider::class,
+        Innovative\Core\Providers\BlogProvider::class,
+        Innovative\Core\Providers\NavigationProvider::class,
+        Innovative\Core\Providers\PageProvider::class,
+        Innovative\Core\Providers\MessengerProvider::class,
+        Innovative\Core\Providers\NotifyProvider::class,
+        Innovative\Core\Providers\SecurityProvider::class,
+        Innovative\Core\Providers\SlugProvider::class,
+        Innovative\Core\Providers\CronProvider::class,
+        Innovative\Core\Providers\FolderProvider::class,
+        Innovative\Core\Providers\HtmlProvider::class,
+        Innovative\Core\Providers\ImageProvider::class,
+        Innovative\Core\Providers\MenuProvider::class,
+        Innovative\Core\Providers\NoteProvider::class,
+        Innovative\Core\Providers\SearchProvider::class,
+        Innovative\Core\Providers\SettingProvider::class,
+        Innovative\Core\Providers\TagProvider::class,
+        Innovative\Core\Providers\UploadProvider::class,
     ],
 
     /*
@@ -191,6 +215,28 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        'Form'      => Collective\Html\FormFacade::class,
+        'HTML'      => Collective\Html\HtmlFacade::class,
+
+        'Cms'               => Innovative\Core\Facades\Cms::class,
+        'Blog'              => Innovative\Core\Facades\Blog::class,
+        'Builder'           => Innovative\Core\Facades\Builder::class,
+        'Cron'              => Innovative\Core\Facades\Cron::class,
+        'Folder'            => Innovative\Core\Facades\Folder::class,
+        'Image'             => Innovative\Core\Facades\Image::class,
+        'Menu'              => Innovative\Core\Facades\Menu::class,
+        'Messenger'         => Innovative\Core\Facades\Messenger::class,
+        'Navigation'        => Innovative\Core\Facades\Navigation::class,
+        'Note'              => Innovative\Core\Facades\Note::class,
+        'Notify'            => Innovative\Core\Facades\Notify::class,
+        'OffensiveContent'  => Innovative\Core\Facades\OffensiveContent::class,
+        'Page'              => Innovative\Core\Facades\Page::class,
+        'Security'          => Innovative\Core\Facades\Security::class,
+        'Setting'           => Innovative\Core\Facades\Setting::class,
+        'Slug'              => Innovative\Core\Facades\Slug::class,
+        'Table'             => Innovative\Core\Facades\Table::class,
+        'Upload'            => Innovative\Core\Facades\Upload::class,
 
     ],
 

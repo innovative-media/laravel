@@ -1,0 +1,15 @@
+default:
+    extensions:
+        Behat\MinkExtension:
+            base_url: DEFINE_ME
+            javascript_session:  selenium2
+            browser_name: firefox
+            goutte: ~
+            selenium2: ~
+    suites:
+        default:
+            paths: [ %paths.base%/tests/Acceptance/features ]
+            contexts: [ Tests\Acceptance\AcceptanceFeatureContext ]
+        regression:
+            paths: [ %paths.base%/tests/Regression/features ]
+            contexts: [ Tests\Regression\RegressionFeatureContext ]

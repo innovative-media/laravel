@@ -1,0 +1,43 @@
+$input-height: rem-calc(33);
+
+/* Alerts
+* ----------- */
+$alert-gray: scale-color(#95A5A6, $lightness: 40%);
+$alert-yellow: scale-color(#95A5A6, $lightness: 20%);
+$alert-red: #E74C3C;
+$alert-green: #70E08D;
+$alert-orange: #FFBD5F;
+$alert-blue: #80AEF9;
+$alert-purple: #C78EFC;
+
+$alert-gray-color: #777777;
+$alert-yellow-color: #2F2F2F;
+$alert-red-color: #FCFCFC;
+$alert-green-color: #2d7840;
+$alert-orange-color: #8e5d17;
+$alert-blue-color: #284e8c;
+$alert-purple-color: #531a88;
+
+$alert-gray-close: #acacac;
+$alert-yellow-close: #d7cf08;
+$alert-red-close: #FCFCFC;
+$alert-green-close: #1fb947;
+$alert-orange-close: #e98e0c;
+$alert-blue-close: #2d69cb;
+$alert-purple-close: #872fd9;
+
+$multi-alert-gray: scale-color( $alert-gray, $lightness: 80%);
+$multi-alert-yellow: scale-color( $alert-yellow, $lightness: 80%);
+$multi-alert-red: scale-color( $alert-red, $lightness: 70%);
+$multi-alert-green: scale-color( $alert-green, $lightness: 80%);
+$multi-alert-orange: scale-color( $alert-orange, $lightness: 80%);
+$multi-alert-blue: scale-color( $alert-blue, $lightness: 80%);
+$multi-alert-purple: scale-color( $alert-purple, $lightness: 80%);
+
+$multi-alert-gray-color: #777777;
+$multi-alert-yellow-color: scale-color($alert-yellow, $lightness: -60%);
+$multi-alert-red-color: #C0392B;
+$multi-alert-green-color: scale-color($alert-green, $lightness: -40%);
+$multi-alert-orange-color: scale-color($alert-orange, $lightness: -40%);
+$multi-alert-blue-color: scale-color($alert-blue, $lightness: -40%);
+$multi-alert-purple-color: scale-color($alert-purple, $lightness: -40%);

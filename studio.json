@@ -1,0 +1,5 @@
+{
+    "packages": {
+        "innovative/core": "workbench/innovative/core/"
+    }
+}

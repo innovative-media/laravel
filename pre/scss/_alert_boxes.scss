@@ -1,0 +1,114 @@
+.alert-box.gray {
+	@include core-alert($alert-gray, $alert-gray-color, 0)
+}
+.alert-box.yellow {
+	@include core-alert($alert-yellow, $alert-yellow-color, 0)
+}
+.alert-box.red {
+	@include core-alert($alert-red, $alert-red-color, 0)
+}
+.alert-box.green {
+	@include core-alert($alert-green, $alert-green-color, 0)
+}
+.alert-box.orange {
+	@include core-alert($alert-orange, $alert-orange-color, 0)
+}
+.alert-box.blue {
+	@include core-alert($alert-blue, $alert-blue-color, 0)
+}
+.alert-box.purple {
+	@include core-alert($alert-purple, $alert-purple-color, 0)
+}
+
+.alert-box {
+	@extend .alert-box.gray;
+
+	padding: rem-calc(5 30 8 10);
+	line-height: rem-calc(16);
+	margin-bottom: rem-calc(8);
+	font-size: rem-calc(12);
+
+	.alert-title {
+		line-height: rem-calc(20);
+		font-size: rem-calc(13);
+		line-height: rem-calc(20);
+	}
+
+	a {
+		font-weight: bold;
+	}
+
+	&.multi-alert {
+		@include core-multi-alert($multi-alert-gray, $multi-alert-gray-color);
+	}
+
+	.close {
+		@include core-close-button($alert-gray-close);
+	}
+}
+.alert-box.warning {
+	@extend .alert-box.yellow;
+
+	&.multi-alert {
+		@include core-multi-alert($multi-alert-yellow, $multi-alert-yellow-color);
+	}
+
+	.close {
+		@include core-close-button($alert-yellow-close);
+	}
+}
+.alert-box.error {
+	@extend .alert-box.red;
+
+	&.multi-alert {
+		@include core-multi-alert($multi-alert-red, $multi-alert-red-color);
+	}
+
+	.close {
+		@include core-close-button($alert-red-close);
+	}
+}
+.alert-box.success {
+	@extend .alert-box.green;
+
+	&.multi-alert {
+		@include core-multi-alert($multi-alert-green, $multi-alert-green-color);
+	}
+
+	.close {
+		@include core-close-button($alert-green-close);
+	}
+}
+.alert-box.alert {
+	@extend .alert-box.orange;
+
+	&.multi-alert {
+		@include core-multi-alert($multi-alert-orange, $multi-alert-orange-color);
+	}
+
+	.close {
+		@include core-close-button($alert-orange-close);
+	}
+}
+.alert-box.info {
+	@extend .alert-box.blue;
+
+	&.multi-alert {
+		@include core-multi-alert($multi-alert-blue, $multi-alert-blue-color);
+	}
+
+	.close {
+		@include core-close-button($alert-blue-close);
+	}
+}
+.alert-box.notice {
+	@extend .alert-box.purple;
+
+	&.multi-alert {
+		@include core-multi-alert($multi-alert-purple, $multi-alert-purple-color);
+	}
+
+	.close {
+		@include core-close-button($alert-purple-close);
+	}
+}
