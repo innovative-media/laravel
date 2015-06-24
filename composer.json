@@ -64,14 +64,14 @@
             "pre-commit install",
             "php artisan key:generate",
             "App\\Console\\Commands\\Setup::postCreateProject",
-            "npm install",
-            "bower install",
             "php artisan migrate --path=vendor/innovative/core/database/migrations/",
             "php artisan db:seed --class=InnovativeCoreSeeder",
             "php artisan vendor:publish --tag=public --force",
             "php artisan clear-compiled",
             "php artisan optimize",
-            "git add -A && git commit -m \"Initial Commit\" --no-verify"
+            "git add -A && git commit -m \"Initial Commit\" --no-verify",
+            "npm install",
+            "bower install"
         ]
     },
     "config": {
