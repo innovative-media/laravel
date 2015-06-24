@@ -48,77 +48,77 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         // Core Exceptions
-        // if ( $e instanceof \Innovative\Core\Exceptions\CoreException )
-        // {
-        //     Core::addError($e->getMessage());
+        if ( $e instanceof \Innovative\Core\Exceptions\CoreException )
+        {
+            Core::addError($e->getMessage());
 
-        //     // Auditor::warning($e);
+            // Auditor::warning($e);
 
-        //     if ( $e->redirect )
-        //     {
-        //         return $e->redirect;
-        //     }
-        // }
+            if ( $e->redirect )
+            {
+                return $e->redirect;
+            }
+        }
 
-        // // Validation Exceptions
-        // if ( $e instanceof \Innovative\Core\Exceptions\ValidationException )
-        // {
-        //     if ( $e->getMessage() )
-        //     {
-        //         Core::addError($e->getMessage());
-        //     }
+        // Validation Exceptions
+        if ( $e instanceof \Innovative\Core\Exceptions\ValidationException )
+        {
+            if ( $e->getMessage() )
+            {
+                Core::addError($e->getMessage());
+            }
 
-        //     try
-        //     {
-        //         return Redirect::back()->withInput()->withErrors($e->validator);
-        //     }
-        //     catch (\InvalidArgumentException $e)
-        //     {
-        //         return Redirect::route('error');
-        //     }
-        // }
+            try
+            {
+                return Redirect::back()->withInput()->withErrors($e->validator);
+            }
+            catch (\InvalidArgumentException $e)
+            {
+                return Redirect::route('error');
+            }
+        }
 
-        // // RecordNotFound Exceptions
-        // if ( $e instanceof \Innovative\Core\Exceptions\RecordNotFoundException )
-        // {
-        //     $message = ( $e->getMessage() ) ?: trans('innovative/core::messages.general.record_not_found');
-        //     Core::addError($message);
+        // RecordNotFound Exceptions
+        if ( $e instanceof \Innovative\Core\Exceptions\RecordNotFoundException )
+        {
+            $message = ( $e->getMessage() ) ?: trans('innovative/core::messages.general.record_not_found');
+            Core::addError($message);
 
-        //     try
-        //     {
-        //         return Redirect::back()->withInput();
-        //     }
-        //     catch (\InvalidArgumentException $e)
-        //     {
-        //         return Redirect::route('error');
-        //     }
-        // }
+            try
+            {
+                return Redirect::back()->withInput();
+            }
+            catch (\InvalidArgumentException $e)
+            {
+                return Redirect::route('error');
+            }
+        }
 
-        // // Permission Exceptions
-        // if ( $e instanceof \Innovative\Core\Exceptions\PermissionException )
-        // {
-        //     if ( $e->getMessage() )
-        //     {
-        //         Core::addError($e->getMessage());
-        //     }
+        // Permission Exceptions
+        if ( $e instanceof \Innovative\Core\Exceptions\PermissionException )
+        {
+            if ( $e->getMessage() )
+            {
+                Core::addError($e->getMessage());
+            }
 
-        //     try
-        //     {
-        //         return Redirect::back();
-        //     }
-        //     catch (\InvalidArgumentException $e)
-        //     {
-        //         return Redirect::route('error');
-        //     }
-        // }
+            try
+            {
+                return Redirect::back();
+            }
+            catch (\InvalidArgumentException $e)
+            {
+                return Redirect::route('error');
+            }
+        }
 
-        // // CSRF Token Mismatch Exceptions
-        // if ( $e instanceof \Illuminate\Session\TokenMismatchException )
-        // {
-        //     Core::addError('Your session has expired. Please try logging in again.');
+        // CSRF Token Mismatch Exceptions
+        if ( $e instanceof \Illuminate\Session\TokenMismatchException )
+        {
+            Core::addError('Your session has expired. Please try logging in again.');
 
-        //     return Redirect::route('login');
-        // }
+            return Redirect::route('login');
+        }
 
         return parent::render($request, $e);
     }
