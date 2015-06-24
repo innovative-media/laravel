@@ -10,9 +10,6 @@
          stopOnFailure="true"
          syntaxCheck="false">
     <testsuites>
-        <testsuite name="Workbench">
-            <directory>./workbench/innovative/core/tests/</directory>
-        </testsuite>
         <testsuite name="Integration">
             <directory>./tests/Integration/</directory>
         </testsuite>

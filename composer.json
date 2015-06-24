@@ -64,7 +64,7 @@
             "App\\Console\\Commands\\Setup::postCreateProject",
             "npm install",
             "bower install",
-            "php artisan migrate --path=workbench/innovative/core/database/migrations/",
+            "php artisan migrate --path=vendor/innovative/core/database/migrations/",
             "php artisan db:seed --class=InnovativeCoreSeeder",
             "php artisan vendor:publish --tag=public --force",
             "php artisan clear-compiled",
