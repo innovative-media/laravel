@@ -12,7 +12,7 @@
 */
 
 // Include all the Core factories for use in this project
-return require_once __DIR__.'/../../../core/vender/innovative/core/tests/factories/classes.php';
+return require_once __DIR__.'/../../../core/vendor/innovative/core/tests/factories/classes.php';
 
 $factory->define(App\User::class, function ($faker) {
     return [

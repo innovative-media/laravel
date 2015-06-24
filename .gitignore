@@ -16,3 +16,4 @@ uploads/*
 tests/*.sqlite
 tests/*.sqlite-journal
 .vhost.json
+studio.json
