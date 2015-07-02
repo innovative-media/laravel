@@ -146,6 +146,7 @@ return [
 
         Barryvdh\Debugbar\ServiceProvider::class,
 
+        Innovative\Core\Providers\AdminPanelProvider::class,
         Innovative\Core\Providers\CoreProvider::class,
         Innovative\Core\Providers\AuditorProvider::class,
         Innovative\Core\Providers\AnalyticsProvider::class,
