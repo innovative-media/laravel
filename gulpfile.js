@@ -1,9 +1,3 @@
-// var elixir = require('laravel-elixir');
-
-// elixir(function(mix) {
-//     mix.less('app.less');
-// });
-
 var gulp 		= require('gulp'),
 	config 		= require('./serum'),
 	serum 		= require('Serum'),

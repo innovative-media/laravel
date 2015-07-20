@@ -6,6 +6,7 @@ use Exception;
 use App;
 use Core;
 use Redirect;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -16,7 +17,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        \Symfony\Component\HttpKernel\Exception\HttpException::class,
+        HttpException::class,
         \Innovative\Core\Exceptions\ValidationException::class,
         \Innovative\Core\Exceptions\RecordNotFoundException::class,
         \Innovative\Core\Exceptions\PermissionException::class,
