@@ -3,8 +3,18 @@
   "devDependencies": {
     "gulp": "^3.8.8",
     "laravel-elixir": "^2.0.0",
-    "Serum": "git+ssh://git@github.com:innovative-media/serum#0.0.4",
-    "gulp-load-plugins": "~0.7.1"
+    "gulp-load-plugins": "~0.7.1",
+    "gulp-sourcemaps": "~1.5.1",
+    "gulp-sass": "~1.3.3",
+    "gulp-concat": "~2.5.2",
+    "gulp-rename": "~1.2.0",
+    "gulp-uglify": "~1.1.0",
+    "gulp-newer": "~0.5.0",
+    "gulp-imagemin": "~2.2.1",
+    "gulp-pixrem": "~0.1.3",
+    "penthouse": "~0.3.1"
   },
-  "publicPath": "public/"
+  "dependencies": {
+    "three": "^0.71.0"
+  }
 }
